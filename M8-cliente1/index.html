@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="it" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M8 Solutions | Mark8 Web Solutions</title>
+    
+    <!-- Caricamento Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Caricamento Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Configurazione colori ufficiali M8 Solutions -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'm8-ottanio': '#066272',
+                        'm8-ciano': '#0AA3BE',
+                        'm8-blu': '#03363F',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Integrato per stili specifici e transizioni fluide */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* Grigio chiarissimo per far risaltare i blocchi */
+            color: #334155;
+        }
+
+        /* Effetti hover ispirati a layout tecnici/professionali a blocchi */
+        .service-card {
+            transition: all 0.3s ease;
+            border-top: 4px solid transparent;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-top-color: #066272; /* m8-ottanio */
+        }
+
+        .icon-container {
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .icon-container {
+            background-color: #0AA3BE; /* m8-ciano */
+            color: white;
+        }
+
+        /* Hero Gradient animato (sottile) */
+        .hero-bg {
+            background: linear-gradient(135deg, #03363F 0%, #066272 100%);
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo immagine -->
+                <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <a target="_blank" href="https://imgbob.net/1P13JHOfGTbvsdN">
+                        <img src="https://imgbob.net/ib/8gWkgicVDgTqzV4_1791373593.jpeg" alt="logo sito.jpeg" class="h-12"/>
+                    </a>
+                </div>
+                
+                <!-- Navigazione Desktop -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-gray-600 hover:text-m8-ciano font-medium transition-colors">Home</a>
+                    <a href="#servizi" class="text-gray-600 hover:text-m8-ciano font-medium transition-colors">Servizi</a>
+                    <a href="#contatti" class="text-gray-600 hover:text-m8-ciano font-medium transition-colors">Contatti</a>
+                </nav>
+
+                <!-- Bottone Area Clienti / Webmail -->
+                <div class="hidden md:flex items-center">
+                    <a href="#" class="bg-m8-ciano hover:bg-m8-ottanio text-white px-5 py-2.5 rounded-md font-medium transition-colors shadow-sm">
+                        Accesso Webmail
+                    </a>
+                </div>
+
+                <!-- Menu Mobile (Hamburger icon placeholder) -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-m8-ottanio focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute w-full left-0 z-40">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#hero" class="block px-3 py-2 text-gray-600 hover:text-m8-ciano font-medium">Home</a>
+                <a href="#servizi" class="block px-3 py-2 text-gray-600 hover:text-m8-ciano font-medium">Servizi</a>
+                <a href="#contatti" class="block px-3 py-2 text-gray-600 hover:text-m8-ciano font-medium">Contatti</a>
+                <a href="#" class="block px-3 py-2 mt-4 bg-m8-ciano text-white text-center rounded-md font-medium">Accesso Webmail</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-bg py-20 lg:py-32 relative overflow-hidden">
+            <!-- Pattern decorativo opzionale -->
+            <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#0AA3BE 1px, transparent 1px); background-size: 30px 30px;"></div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    
+                    <div>
+                        <h1 class="text-4xl font-bold text-white mb-2">Mark8 Web Solutions</h1>
+                        <h2 class="text-2xl text-m8-ciano font-semibold mb-4">Infrastrutture Digitali e Servizi Web per il tuo Business</h2>
+                        <p class="text-gray-200 mb-8">Dalla realizzazione della tua presenza online alla sicurezza dei tuoi dati. Offriamo soluzioni strutturate, affidabili e performanti per professionisti e aziende.</p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#servizi" class="inline-flex justify-center items-center bg-m8-ciano hover:bg-white hover:text-m8-ottanio text-white px-8 py-3.5 rounded-md font-semibold text-lg transition-all shadow-lg">
+                                Scopri i Servizi
+                            </a>
+                            <a href="#contatti" class="inline-flex justify-center items-center bg-transparent border-2 border-m8-ciano text-white hover:bg-m8-ciano hover:text-white px-8 py-3.5 rounded-md font-semibold text-lg transition-all">
+                                Contattaci Ora
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="w-full">
+                        <a target="_blank" href="https://imgbob.net/3Bw7LB7LzySxYWX" class="overflow-hidden rounded-lg shadow-xl block w-full flex justify-center items-center">
+                            <img src="https://imgbob.net/ib/un0lUM3ImwvbnfP_1791373334.jpeg" alt="immagine sito" style="transform: scale(1.1); transition: transform 0.3s ease;" onmouseover="this.style.transform='scale(1.15)'" onmouseout="this.style.transform='scale(1.1)'" class="w-full h-auto object-cover"/>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Servizi Section -->
+        <section id="servizi" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-m8-ottanio font-bold text-sm tracking-widest uppercase mb-2">Il Nostro Portfolio</h2>
+                    <h3 class="text-3xl md:text-4xl font-extrabold text-m8-blu mb-4">Soluzioni IT e Web integrate</h3>
+                    <p class="text-gray-600 text-lg">
+                        Progettiamo e gestiamo servizi tecnologici su misura, garantendo stabilità, sicurezza e una presenza digitale impeccabile.
+                    </p>
+                </div>
+
+                <!-- Griglia Servizi (4 colonne su desktop, 2 su tablet, 1 su mobile) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Servizio 1: Web Basic -->
+                    <div class="service-card bg-white rounded-xl p-8 border border-gray-100 flex flex-col h-full relative overflow-hidden group">
+                        <div class="icon-container w-14 h-14 bg-blue-50 text-m8-ottanio rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-m8-blu mb-3 group-hover:text-m8-ottanio transition-colors">Web Basic</h4>
+                        <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                            Realizzazione di siti web essenziali e landing page singole. Soluzioni rapide e ottimizzate, focalizzate sulla presenza online istituzionale o sulla generazione di contatti commerciali.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <a href="#contatti" class="text-m8-ciano font-semibold text-sm hover:text-m8-ottanio flex items-center transition-colors">
+                                Richiedi info 
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servizio 2: Email & Posta -->
+                    <div class="service-card bg-white rounded-xl p-8 border border-gray-100 flex flex-col h-full relative overflow-hidden group">
+                        <div class="icon-container w-14 h-14 bg-blue-50 text-m8-ottanio rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-m8-blu mb-3 group-hover:text-m8-ottanio transition-colors">Email & Posta</h4>
+                        <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                            Gestione completa di caselle email professionali legate al tuo dominio. Include un'interfaccia Webmail dedicata, sicura e intuitiva per tutti i tuoi collaboratori.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <a href="#contatti" class="text-m8-ciano font-semibold text-sm hover:text-m8-ottanio flex items-center transition-colors">
+                                Richiedi info
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servizio 3: Sicurezza & Data Care -->
+                    <div class="service-card bg-white rounded-xl p-8 border border-gray-100 flex flex-col h-full relative overflow-hidden group">
+                        <div class="icon-container w-14 h-14 bg-blue-50 text-m8-ottanio rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-m8-blu mb-3 group-hover:text-m8-ottanio transition-colors">Sicurezza & Data Care</h4>
+                        <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                            Massima protezione per la tua infrastruttura. Sistemi di protezione antivirus centralizzata e policy di backup automatici per la salvaguardia totale dei dati aziendali.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <a href="#contatti" class="text-m8-ciano font-semibold text-sm hover:text-m8-ottanio flex items-center transition-colors">
+                                Richiedi info
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Servizio 4: Digital Signage -->
+                    <div class="service-card bg-white rounded-xl p-8 border border-gray-100 flex flex-col h-full relative overflow-hidden group">
+                        <div class="icon-container w-14 h-14 bg-blue-50 text-m8-ottanio rounded-lg flex items-center justify-center mb-6">
+                            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2zM8 21h8"></path>
+                                <!-- Screen content lines -->
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 9h8M8 13h6"></path>
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-m8-blu mb-3 group-hover:text-m8-ottanio transition-colors">Digital Signage</h4>
+                        <p class="text-gray-600 flex-grow text-sm leading-relaxed">
+                            Soluzioni hardware e software chiavi in mano per la gestione di piccoli pannelli pubblicitari e schermi informativi all'interno di attività commerciali.
+                        </p>
+                        <div class="mt-6 pt-4 border-t border-gray-100">
+                            <a href="#contatti" class="text-m8-ciano font-semibold text-sm hover:text-m8-ottanio flex items-center transition-colors">
+                                Richiedi info
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer / Contatti -->
+    <footer id="contatti" class="bg-m8-blu text-white pt-16 pb-8 border-t-4 border-m8-ciano">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                
+                <!-- Colonna 1: Brand Info -->
+                <div>
+                    <div class="flex items-center mb-6">
+                        <span class="font-bold text-3xl tracking-tight text-white">M8</span>
+                        <span class="font-light text-2xl ml-1 text-m8-ciano uppercase tracking-wider">Solutions</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Mark8 Web Solutions è il partner tecnologico ideale per le aziende che cercano affidabilità, sicurezza e presenza digitale di qualità.
+                    </p>
+                </div>
+
+                <!-- Colonna 2: Contatti Rapidi -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contatti</h4>
+                    <ul class="space-y-4 text-gray-400 text-sm">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-m8-ciano mr-3 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span>Via dell'Innovazione Digitale, 128<br>00100 Roma (RM) - Italia</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-m8-ciano mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span>+39 06 123 456 789</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-m8-ciano mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span>info@m8web.it</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 text-m8-ciano mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path></svg>
+                            <a href="https://www.m8web.it" class="hover:text-white transition-colors">www.m8web.it</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Colonna 3: Link Rapidi -->
+                <div>
+                    <h4 class="text-lg font-bold mb-6 text-white uppercase tracking-wider">Link Utili</h4>
+                    <ul class="space-y-3 text-sm text-gray-400">
+                        <li><a href="#" class="hover:text-m8-ciano transition-colors">Webmail Login</a></li>
+                        <li><a href="#" class="hover:text-m8-ciano transition-colors">Assistenza Tecnica</a></li>
+                        <li><a href="#" class="hover:text-m8-ciano transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-m8-ciano transition-colors">Termini di Servizio</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <div class="border-t border-gray-700 pt-8 mt-8 text-center text-sm text-gray-500 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Mark8 Web Solutions. Tutti i diritti riservati.</p>
+                <p class="mt-2 md:mt-0">Brand commerciale: <span class="text-gray-400 font-medium">M8 Solutions</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            // Toggle visibility menu mobile
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+            
+            // Chiudi il menu quando si clicca su un link interno
+            const links = menu.querySelectorAll('a');
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
